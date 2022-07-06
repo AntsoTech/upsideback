@@ -7,6 +7,8 @@
   "license": "ISC",
   "scripts": {
     "dev": "nodemon index.js",
+    "start": "node index.js",
+    "postinstall": "tsc",
     "ts": "tsc -w",
     "fix": "eslint \"./**/*.ts\" --fix",
     "prettify": "prettier --write .",
