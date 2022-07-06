@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 // CORS : J'autorise localhost:3001 et localhost:3000
 // à faire des requetes axios
 const corsOptions: cors.CorsOptions = {
-  origin: ['https://upside-7bqesp2ee-jacquespoulin.vercel.app/'],
+  origin: ['https://upside-7bqesp2ee-jacquespoulin.vercel.app/', 'https://upside.vercel.app/','https://upside-jacquespoulin.vercel.app/'],
   credentials: true,
 };
 
