@@ -24,16 +24,16 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   res.setHeader('Access-Control-Expose-Headers', 'Content-Range');
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS"));
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS"));
   next();
 });
 
-app.all('/', function(req, res, next) {
+app.all(('/',(req: Request, res: Response, next: NextFunction) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS"));
-    next()
-  });
+    next();
+  }));
 
 //middleware pour lire le body
 app.use(express.json());
