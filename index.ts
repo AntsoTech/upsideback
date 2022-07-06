@@ -25,6 +25,12 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
+app.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next()
+  });
+
 //middleware pour lire le body
 app.use(express.json());
 //middleware pour envoyer des cookies
