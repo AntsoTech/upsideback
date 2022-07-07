@@ -21,27 +21,7 @@ const corsOptions: cors.CorsOptions = {
 
 // middleware cors
 app.use(cors(corsOptions));
-const allowedOrigins = ['https://upside.vercel.app'];
-//middleware perso pour ajouter les headers nécessaires à react-admin
-app.use((req: Request, res: Response, next: NextFunction) => {
-  const origin: string | any = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-    res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Access-Control-Expose-Headers', 'Content-Range');
-    res.header(
-      'Access-Control-Allow-Methods',
-      'GET, PUT, POST, DELETE, OPTIONS'
-    );
-    res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
-    );
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', 'true');
-  }
-  next();
-});
+
 
 //middleware pour lire le body
 app.use(express.json());
